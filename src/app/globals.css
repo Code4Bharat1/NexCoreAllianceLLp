@@ -1,0 +1,34 @@
+/* src/app/globals.css */
+
+/* 1. Custom Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+/* 2. Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. Custom Base Styles */
+@layer base {
+  body {
+    font-family: "roboto", sans-serif;
+  }
+}
+
+* {
+  user-select: none !important;
+}
+
+/* Custom animation for scrolling effect */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 15s linear infinite;
+}
