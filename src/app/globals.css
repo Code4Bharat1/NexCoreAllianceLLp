@@ -15,9 +15,6 @@
   }
 }
 
-* {
-  user-select: none !important;
-}
 
 /* Custom animation for scrolling effect */
 @keyframes scroll {
