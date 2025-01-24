@@ -19,7 +19,6 @@ This project encompasses the digital initiatives and platforms of NexCore Allian
 
 * **Frontend:** 
     * Next.js 
-    * React 
     * Tailwind CSS
     * JavaScript 
 
@@ -29,7 +28,6 @@ This project encompasses the digital initiatives and platforms of NexCore Allian
 * **`pages`:** Next.js pages for routing (e.g., `index.js`, `about.js`, `courses.js`).
 * **`styles`:** Tailwind CSS configuration and global styles.
 * **`public`:** Static assets (images, logos, fonts, etc.).
-* **`[brand-specific folders]`:** (e.g., `isrc`, `code4bharat`, `education`) - Brand-specific components, pages, and data.
 
 ## Development
 
@@ -47,22 +45,3 @@ This project encompasses the digital initiatives and platforms of NexCore Allian
     ```bash
     npm start
     ```
-
-## Contributing
-
-* Fork the repository.
-* Create a new branch for your changes.
-* Commit and push your changes with clear and concise commit messages.
-* Create a pull request.
-
-## License
-
-* [Project license] (e.g., MIT, GPL)
-
-**Note:**
-
-* Replace the placeholders (e.g., `[brand-specific folders]`) with the actual folder names used in your project.
-* Add more details to each section as needed (e.g., specific features, deployment instructions, testing procedures).
-* Consider adding a section for "Environment Variables" to guide developers on setting up the project environment.
-
-This README file now accurately reflects the frontend-only nature of your NexCore Alliance project.
