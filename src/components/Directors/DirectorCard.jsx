@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Linkedin, Facebook, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 const DirectorCard = ({
-  image = "https://readymadeui.com/team-1.webp",
+  image = "",
   name = "",
   position = "",
   description = "",
@@ -29,21 +30,23 @@ const DirectorCard = ({
       <div className="relative p-8 flex flex-col flex-grow items-center justify-between">
         {/* Profile Image Section */}
         <div className="relative mb-6">
-          <div className="relative w-28 h-28">
-            {!imageLoaded && (
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full animate-pulse"></div>
-            )}
-            <img
-              className={`w-full h-full rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-110 group-hover:border-blue-200 transition-all duration-500 relative z-10 ${
-                imageLoaded ? "opacity-100" : "opacity-0"
-              }`}
-              src={image}
-              alt={`${name}'s photo`}
-              onLoad={() => setImageLoaded(true)}
-            />
-          </div>
-        </div>
-
+  <div className="relative w-28 h-28">
+    {!imageLoaded && (
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full animate-pulse"></div>
+    )}
+    <Image
+      src={image} // e.g. "/prashant.png"
+      alt={`${name}'s photo`}
+      width={112}  // w-28 = 112px
+      height={112} // h-28 = 112px
+      className={`w-full h-full rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-110 group-hover:border-blue-200 transition-all duration-500 relative z-10 ${
+        imageLoaded ? "opacity-100" : "opacity-0"
+      }`}
+      onLoadingComplete={() => setImageLoaded(true)}
+      priority={false} // true agar above-the-fold image ho
+    />
+  </div>
+</div>   
         {/* Name, Position and Description */}
         <div className="text-center mb-6 space-y-3 flex-grow flex flex-col justify-start">
           <h3 className="font-bold text-xl text-slate-900 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
