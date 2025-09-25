@@ -14,7 +14,7 @@ const Directors = () => {
       position: "CEO & Founder",
       description:
         "Seasoned leader in digital business and operations, known for driving innovative growth strategies.",
-      image: "/directors/prashant.png",
+      image: "/prashant.png",
       linkedIn: "https://www.linkedin.com/in/prashant-patil-04642219b",
       whatsapp: "91 9594430295",
     },
@@ -23,7 +23,7 @@ const Directors = () => {
       position: "CAO & Founder",
       description:
         "Passionate academic, edtech innovator, and mentor focused on STEM and organizational excellence.",
-      image: "/directors/awab.png",
+      image: "/awab.png",
       linkedIn: "https://www.linkedin.com/in/awabfakih",
       whatsapp: "91 8976104646",
     },
@@ -33,7 +33,7 @@ const Directors = () => {
       description:
         "Accomplished financial strategist with extensive experience in guiding organizations .",
 
-      image: "/directors/neha.png",
+      image: "/neha.png",
       linkedIn: "https://www.linkedin.com/in/neha-mehnaz-awab-fakih-2359a189",
       whatsapp: "91 9022477293",
     },
@@ -42,7 +42,7 @@ const Directors = () => {
       position: "CMO & Founder",
       description:
         "Creative marketing leader skilled in digital strategy, user experience, and business development.",
-      image: "/directors/ayan.png",
+      image: "/ayan.png",
       linkedIn: "https://www.linkedin.com/in/raje-ayaan-327593229",
       whatsapp: "91 9920892689",
     },
