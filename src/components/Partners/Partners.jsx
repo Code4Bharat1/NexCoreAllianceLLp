@@ -5,7 +5,7 @@ const Partners = () => {
   return (
     <section
       id="partners"
-      className="bg-gradient-to-r from-[#e0f7fa] to-[#ffffff] py-16 overflow-hidden mt-12 mb-12"
+      className="bg-gradient-to-r from-[#e0f7fa] to-[#ffffff] py-16 overflow-hidden mt-12 mb-12 select-none"
     >
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Heading */}

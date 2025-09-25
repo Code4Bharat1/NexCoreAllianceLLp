@@ -6,186 +6,140 @@ import { useState, useEffect } from "react";
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("/");
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    setActiveLink(window.location.pathname);
+    if (typeof window !== "undefined") {
+      setActiveLink(window.location.pathname);
+
+      const handleScroll = () => setIsScrolled(window.scrollY > 10);
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
 
   const handleLinkClick = (path) => {
     setActiveLink(path);
     setIsOpen(false);
-    if (path === "/") {
-      window.location.href = "/";
-    }
   };
 
+  const menuItems = [
+    { href: "/", label: "Home" },
+    { href: "/about-us", label: "About Us" },
+    { href: "/our-brands", label: "Our Brands" },
+    { href: "/our-masterminds", label: "Masterminds" },
+    { href: "/contact-us", label: "Contact Us" },
+  ];
+
   return (
-    <nav className="bg-white text-gray-800 shadow-md border-b border-gray-200 fixed top-0 left-0 w-full h-20 z-50">
-    <div className="flex justify-between items-center h-20 px-5">
-      {/* Logo aligned to the left */}
-      <div className="flex-shrink-0">
-        <Link href="/" passHref>
+    <nav
+      className={`fixed top-0 left-0 w-full h-20 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50"
+          : "bg-white shadow-md border-b border-gray-200"
+      }`}
+    >
+      <div className="flex justify-between items-center h-20 px-5 max-w-7xl mx-auto">
+        {/* Logo */}
+        <Link href="/" className="relative group flex-shrink-0">
           <Image
             src="/images/corelogo.png"
             alt="Nexcore Logo"
             width={200}
             height={150}
-            layout="fixed"
-            className="object-contain cursor-pointer"
+            className="object-contain cursor-pointer transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
-      </div>
-  
-      {/* Mobile Menu Button */}
-      <div className="flex items-center md:hidden">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          type="button"
-          className="text-gray-800 hover:text-blue-600 focus:outline-none"
-          aria-controls="mobile-menu"
-          aria-expanded={isOpen}
-        >
-          <span className="sr-only">Open main menu</span>
-          {isOpen ? (
-            <svg
-              className="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex ml-auto space-x-4 items-center">
+          {menuItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`px-4 py-2 text-lg font-semibold rounded-lg transition-all duration-300 ${
+                activeLink === item.href
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-800 hover:text-blue-600 hover:bg-blue-50/50"
+              }`}
+              onClick={() => handleLinkClick(item.href)}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 rounded-lg text-gray-800 hover:text-blue-600 hover:bg-blue-50 transition"
+          >
+            <span className="sr-only">Toggle menu</span>
+            <div className="w-6 h-6 relative">
+              <span
+                className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ${
+                  isOpen ? "rotate-45 top-3" : "top-1"
+                }`}
               />
-            </svg>
-          ) : (
-            <svg
-              className="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 8h16M4 16h16"
+              <span
+                className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 top-3 ${
+                  isOpen ? "opacity-0" : "opacity-100"
+                }`}
               />
-            </svg>
-          )}
-        </button>
-      </div>
-  
-      {/* Desktop Menu */}
-      <div className="hidden md:flex ml-auto space-x-8 justify-end items-center">
-        <Link
-          href="/"
-          className={`text-lg font-semibold hover:text-blue-600 transition-colors duration-300 ${
-            activeLink === "/" ? "underline text-blue-900" : "text-gray-800"
-          }`}
-          onClick={() => handleLinkClick("/")}
-        >
-          Home
-        </Link>
-        <Link
-          href="/about-us"
-          className={`text-lg font-semibold hover:text-blue-600 transition-colors duration-300 ${
-            activeLink === "/about-us" ? "underline text-blue-600" : "text-gray-800"
-          }`}
-          onClick={() => handleLinkClick("/about-us")}
-        >
-          About Us
-        </Link>
-        <Link
-          href="/our-brands"
-          className={`text-lg font-semibold hover:text-blue-600 transition-colors duration-300 ${
-            activeLink === "/our-brands" ? "underline text-blue-600" : "text-gray-800"
-          }`}
-          onClick={() => handleLinkClick("/our-brands")}
-        >
-          Our Brands
-        </Link>
-        <Link
-          href="/our-masterminds"
-          className={`text-lg font-semibold hover:text-blue-600 transition-colors duration-300 ${
-            activeLink === "/our-masterminds" ? "underline text-blue-600" : "text-gray-800"
-          }`}
-          onClick={() => handleLinkClick("/our-masterminds")}
-        >
-          Masterminds
-        </Link>
-      </div>
-    </div>
-  
-    {/* Mobile Menu */}
-    {isOpen && (
-      <div
-        className="absolute top-20 left-0 w-full bg-white shadow-lg z-40"
-        id="mobile-menu"
-      >
-        <div className="px-6 pt-4 pb-6 space-y-4">
-          <Link
-            href="/"
-            className={`block text-xl font-semibold hover:text-blue-600 transition-colors duration-300 ${
-              activeLink === "/" ? "underline text-blue-600" : "text-gray-800"
-            }`}
-            onClick={() => {
-              handleLinkClick("/");
-              setIsOpen(false);
-            }}
-          >
-            Home
-          </Link>
-          <Link
-            href="/about-us"
-            className={`block text-xl font-semibold hover:text-blue-600 transition-colors duration-300 ${
-              activeLink === "/about-us"
-                ? "underline text-blue-600"
-                : "text-gray-800"
-            }`}
-            onClick={() => {
-              handleLinkClick("/about-us");
-              setIsOpen(false);
-            }}
-          >
-            About Us
-          </Link>
-          <Link
-            href="/our-brands"
-            className={`block text-xl font-semibold hover:text-blue-600 transition-colors duration-300 ${
-              activeLink === "/our-brands"
-                ? "underline text-blue-600"
-                : "text-gray-800"
-            }`}
-            onClick={() => {
-              handleLinkClick("/our-brands");
-              setIsOpen(false);
-            }}
-          >
-            Our Brands
-          </Link>
-          <Link
-            href="/our-masterminds"
-            className={`block text-xl font-semibold hover:text-blue-600 transition-colors duration-300 ${
-              activeLink === "/our-masterminds"
-                ? "underline text-blue-600"
-                : "text-gray-800"
-            }`}
-            onClick={() => {
-              handleLinkClick("/our-masterminds");
-              setIsOpen(false);
-            }}
-          >
-            Masterminds
-          </Link>
+              <span
+                className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ${
+                  isOpen ? "-rotate-45 top-3" : "top-5"
+                }`}
+              />
+            </div>
+          </button>
         </div>
       </div>
-    )}
-  </nav>
+
+      {/* Mobile Sidebar Menu (from Left) */}
+      <div
+        className={`fixed top-0 left-0 h-full w-72 bg-white/95 backdrop-blur-md shadow-xl z-50 transform transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Close Button */}
+        <div className="flex justify-end p-4">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="text-gray-800 hover:text-blue-600 transition text-2xl font-bold"
+          >
+            &times;
+          </button>
+        </div>
+
+        <div className="flex flex-col mt-4 px-6 space-y-4">
+          {menuItems.map((item, index) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 transform ${
+                activeLink === item.href
+                  ? "bg-blue-50 text-blue-600 translate-x-2"
+                  : "hover:bg-blue-50 hover:text-blue-600 hover:translate-x-2 text-gray-800"
+              }`}
+              style={{ transitionDelay: `${index * 50}ms` }}
+              onClick={() => handleLinkClick(item.href)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+    </nav>
   );
 };
 
