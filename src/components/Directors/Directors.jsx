@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import DirectorCard from "./DirectorCard";
 import Link from "next/link";
+
 const Directors = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -32,7 +33,7 @@ const Directors = () => {
       description:
         "Accomplished financial strategist with extensive experience in guiding organizations .",
 
-      image: "  /directors/neha.png",
+      image: "/directors/neha.png",
       linkedIn: "https://www.linkedin.com/in/neha-mehnaz-awab-fakih-2359a189",
       whatsapp: "91 9022477293",
     },
