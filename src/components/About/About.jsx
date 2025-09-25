@@ -107,13 +107,12 @@ const About = () => {
         {/* Main Content Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Nex Core Alliance Card */}
-           <div
-            className={`relative transition-all duration-700 delay-200 ${
+          <div
+            className={`relative transition-all duration-700 ${
               isVisible
                 ? "opacity-100 translate-x-0"
-                : "opacity-0 translate-x-12"
+                : "opacity-0 -translate-x-12"
             }`}
-            style={{ userSelect: "none" }} // Prevent text selection
           >
             <div className="bg-white/90 backdrop-blur-sm p-8 lg:p-10 rounded-2xl shadow-xl border border-white/20">
               <div className="flex items-center mb-6">

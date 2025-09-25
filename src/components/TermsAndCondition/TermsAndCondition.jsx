@@ -1,3 +1,5 @@
+
+"use client";
 import React, { useState, useEffect } from "react";
 import { ChevronUp, ChevronDown, FileText, Mail, Phone, MapPin, Clock, Shield, Users, Globe, CheckCircle, AlertTriangle, Menu } from "lucide-react";
 

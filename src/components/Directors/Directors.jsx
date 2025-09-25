@@ -1,3 +1,5 @@
+
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import DirectorCard from "./DirectorCard";
 import Link from "next/link";

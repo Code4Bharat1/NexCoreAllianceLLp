@@ -172,7 +172,7 @@ const WhyChooseUs = () => {
             <div className="mb-6 group-hover:scale-110 transition-transform duration-500">
               <div className={`${reason.accentColor} group-hover:text-white transition-colors duration-300`}>
                 {React.cloneElement(reason.icon, {
-                  size: window.innerWidth < 640 ? 36 : 44,
+                  size: typeof window !== "undefined" && window.innerWidth < 640 ? 36 : 44,
                 })}
               </div>
             </div>

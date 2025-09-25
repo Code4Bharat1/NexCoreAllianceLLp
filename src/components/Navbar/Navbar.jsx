@@ -1,28 +1,23 @@
-'use client';
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-
-const Navbar = () => {
+export default function Navbar() {
   const [activeLink, setActiveLink] = useState("/");
-  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       setActiveLink(window.location.pathname);
-
       const handleScroll = () => setIsScrolled(window.scrollY > 10);
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }
+    // Always return a cleanup function for SSR
+    return () => {};
   }, []);
-
-  const handleLinkClick = (path) => {
-    setActiveLink(path);
-    setIsOpen(false);
-  };
-
   const menuItems = [
     { href: "/", label: "Home" },
     { href: "/about-us", label: "About Us" },
@@ -41,13 +36,14 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center h-20 px-5 max-w-7xl mx-auto">
         {/* Logo */}
-        <Link href="/" className="relative group flex-shrink-0">
+        <Link href="/" className="relative flex-shrink-0">
           <Image
             src="/images/corelogo.png"
             alt="Nexcore Logo"
             width={200}
             height={150}
-            className="object-contain cursor-pointer transition-transform duration-300 group-hover:scale-105"
+            className="object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
+            priority
           />
         </Link>
 
@@ -74,8 +70,8 @@ const Navbar = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 rounded-lg text-gray-800 hover:text-blue-600 hover:bg-blue-50 transition"
+            aria-label="Toggle menu"
           >
-            <span className="sr-only">Toggle menu</span>
             <div className="w-6 h-6 relative">
               <span
                 className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ${
@@ -97,17 +93,17 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Sidebar Menu (from Left) */}
+      {/* Mobile Sidebar Menu */}
       <div
         className={`fixed top-0 left-0 h-full w-72 bg-white/95 backdrop-blur-md shadow-xl z-50 transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Close Button */}
         <div className="flex justify-end p-4">
           <button
             onClick={() => setIsOpen(false)}
             className="text-gray-800 hover:text-blue-600 transition text-2xl font-bold"
+            aria-label="Close menu"
           >
             &times;
           </button>
@@ -141,6 +137,4 @@ const Navbar = () => {
       )}
     </nav>
   );
-};
-
-export default Navbar;
+}
