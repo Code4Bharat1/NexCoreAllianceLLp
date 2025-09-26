@@ -46,7 +46,7 @@ const Footer = () => {
     { href: "/", label: "Home" },
     { href: "/about-us", label: "About Us" },
     { href: "/our-brands", label: "Our Brands" },
-    { href: "/terms-&-condition", label: "Terms & Conditions" },
+    { href: "/terms-and-condition", label: "Terms & Conditions" },
   ];
 
   const policies = [
