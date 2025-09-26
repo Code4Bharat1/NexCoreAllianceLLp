@@ -1,6 +1,42 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+export const metadata = {
+  title: "About Us | NexCoreAlliance",
+  description:
+    "Learn about NexCoreAlliance — a visionary organization driving innovation in STEM education, IT solutions, and professional development.",
+  keywords:
+    "NexCoreAlliance, About Us, STEM education, IT solutions, professional development, technology solutions",
+  openGraph: {
+    title: "About Us | NexCoreAlliance",
+    description:
+      "Discover NexCoreAlliance's mission, vision, and core values. Pioneering the future through education, innovation, and technology.",
+    url: "https://www.nexcorealliance.com/about",
+    type: "website",
+    images: [
+      {
+        url: "/seo-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "About Us - NexCoreAlliance",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | NexCoreAlliance",
+    description:
+      "Explore NexCoreAlliance's journey, mission, and commitment to education, technology, and professional development.",
+    images: ["/seo-banner.png"],
+  },
+  alternates: {
+    canonical: "https://www.nexcorealliance.com/about",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);

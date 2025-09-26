@@ -1,7 +1,43 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { FaFacebook, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
-
+// ✅ SEO Metadata for Contact Page
+export const metadata = {
+  title: "Contact Us | NexCoreAlliance",
+  description:
+    "Get in touch with NexCoreAlliance — whether you have a question, partnership inquiry, or need support, our team is ready to assist you.",
+  keywords:
+    "NexCoreAlliance contact, customer support, partnership inquiry, careers, technical support, contact form",
+  openGraph: {
+    title: "Contact Us | NexCoreAlliance",
+    description:
+      "Reach out to NexCoreAlliance for partnerships, support, or general inquiries. Connect with our team today.",
+    url: "https://www.nexcorealliance.com/contact",
+    type: "website",
+    images: [
+      {
+        url: "/seo-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact NexCoreAlliance",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | NexCoreAlliance",
+    description:
+      "Connect with NexCoreAlliance for inquiries, support, and partnership opportunities.",
+    images: ["/seo-banner.png"],
+  },
+  alternates: {
+    canonical: "https://www.nexcorealliance.com/contact",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 const ContactPage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({

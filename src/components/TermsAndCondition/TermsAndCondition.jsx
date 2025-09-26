@@ -8,6 +8,51 @@ const TermsAndConditions = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [lastUpdated] = useState("January 15, 2024");
+  
+  // SEO Meta Data
+  const seoData = {
+    title: "Terms and Conditions - NexCore Alliance LLP | ISRC, Code4Bharat Legal Terms",
+    description: "Read the comprehensive Terms and Conditions for NexCore Alliance LLP services including ISRC competitions, Code4Bharat IT solutions, and Education.Code4Bharat training programs.",
+    keywords: "NexCore Alliance terms, ISRC terms conditions, Code4Bharat legal, IT services terms, robotics competition rules, web development terms, training program conditions",
+    canonicalUrl: "https://www.nexcorealliance.com/terms-and-conditions",
+    lastModified: "2024-01-15T00:00:00Z",
+    organization: "NexCore Alliance LLP",
+    contactEmail: "nexcorealiancellp@gmail.com",
+    contactPhone: "+919594430295",
+    address: "Off BKC, Mumbai, India 400070"
+  };
+
+  // Structured Data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": seoData.title,
+    "description": seoData.description,
+    "url": seoData.canonicalUrl,
+    "dateModified": seoData.lastModified,
+    "publisher": {
+      "@type": "Organization",
+      "name": seoData.organization,
+      "email": seoData.contactEmail,
+      "telephone": seoData.contactPhone,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressCountry": "IN",
+        "postalCode": "400070"
+      }
+    },
+    "mainEntity": {
+      "@type": "TermsOfService",
+      "name": "Terms and Conditions",
+      "text": "Terms and Conditions for NexCore Alliance LLP services",
+      "dateModified": seoData.lastModified,
+      "applicableLocation": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+  };
 
   const toggleSection = (sectionId) => {
     setExpandedSections(prev => ({

@@ -1,0 +1,12 @@
+# Robots.txt for https://nexcorealliance.com
+
+User-agent: *
+Allow: /
+
+# Block admin or unnecessary paths (if they exist in your project)
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://nexcorealliance.com/sitemap.xml
