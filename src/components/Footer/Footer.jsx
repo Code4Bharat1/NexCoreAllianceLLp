@@ -38,7 +38,7 @@ const Footer = () => {
   const socialLinks = [
     { href: "https://www.facebook.com/profile.php?id=61570113656994", icon: FaFacebook, color: "text-blue-600 hover:text-blue-700", label: "Facebook" },
     { href: "https://www.linkedin.com/company/105730702/admin/dashboard/", icon: FaLinkedin, color: "text-blue-700 hover:text-blue-800", label: "LinkedIn" },
-    { href: "https://www.instagram.com/nexcorealliance/", icon: FaInstagram, color: "text-pink-600 hover:text-pink-700", label: "Instagram" },
+    { href: "https://www.instagram.com/nexcorealliancellp/", icon: FaInstagram, color: "text-pink-600 hover:text-pink-700", label: "Instagram" },
     { href: "https://www.youtube.com/channel/UCYqpIltw48XxkMRLC-HCgag", icon: FaYoutube, color: "text-red-600 hover:text-red-700", label: "YouTube" },
   ];
 
