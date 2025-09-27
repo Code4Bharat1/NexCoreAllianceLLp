@@ -14,25 +14,26 @@ const Hero = () => {
 
   return (
     <section
-      className="relative min-h-screen bg-cover bg-center flex items-center"
+      className="relative min-h-screen bg-cover bg-center flex items-center select-none"
       aria-labelledby="hero-heading"
     >
       {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
 
       <div
-  className={`relative max-w-7xl mx-auto px-4 py-40 md:py-48 flex flex-col-reverse md:flex-row items-center transition-all duration-1000 ${
-    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-  } hero-content`}
-  style={{ userSelect: "none" }} // Prevent text selection
->
+        className={`relative max-w-7xl mx-auto px-4 py-40 md:py-48 flex flex-col-reverse md:flex-row items-center transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        } hero-content`}
+        style={{ userSelect: "none" }} // Prevent text selection
+      >
         {/* Text Content */}
         <div className="md:w-1/2 text-center md:text-left">
           <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg">
             Empowering Innovation, Education, and Technology
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 mb-6 max-w-lg mx-auto md:mx-0 drop-shadow-sm">
-            Bridging the gap between education and technology to create a brighter future.
+            Bridging the gap between education and technology to create a
+            brighter future.
           </p>
           <div className="flex justify-center md:justify-start gap-4 flex-wrap">
             <Link
@@ -49,9 +50,6 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-
-        
-        
       </div>
 
       <style jsx>{`

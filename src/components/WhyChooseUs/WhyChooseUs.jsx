@@ -64,7 +64,7 @@ const WhyChooseUs = () => {
       <section
         ref={sectionRef}
         id="why-choose-us"
-        className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 text-gray-800 overflow-hidden"
+        className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 text-gray-800 overflow-hidden select-none"
       >
         {/* Background Circles (lighter for performance) */}
         <div className="absolute inset-0 overflow-hidden">

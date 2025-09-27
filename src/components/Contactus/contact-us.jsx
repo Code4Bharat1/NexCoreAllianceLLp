@@ -261,7 +261,7 @@ Sent from Nexcore Alliance Website`;
     },
   ];
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 select-none">
       <section ref={sectionRef} className="relative py-20 overflow-hidden">
         {/* Enhanced Background Elements */}
         <div className="absolute inset-0">

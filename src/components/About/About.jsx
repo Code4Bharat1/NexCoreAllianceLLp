@@ -71,7 +71,7 @@ const About = () => {
     <section
       ref={sectionRef}
       id="about-us"
-      className="relative bg-gradient-to-br from-[#DBE2EF] via-[#F8FAFF] to-[#E8F2FF] text-gray-800 mt-28 overflow-hidden"
+      className="relative bg-gradient-to-br from-[#DBE2EF] via-[#F8FAFF] to-[#E8F2FF] text-gray-800 mt-28 overflow-hidden select-none"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
