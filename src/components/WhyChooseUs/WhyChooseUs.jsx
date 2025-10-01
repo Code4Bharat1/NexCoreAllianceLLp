@@ -105,7 +105,7 @@ const WhyChooseUs = () => {
                 isVisible ? "opacity-100" : "opacity-0"
               }`}
             >
-              Nex Core Alliance: Where Learning Meets Innovation
+              Nexcore Alliance : Where Learning Meets Innovation
             </h2>
             <p
               className={`text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto transition-all duration-1000 ${

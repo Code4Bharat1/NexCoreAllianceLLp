@@ -43,9 +43,8 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about-us", label: "About Us" },
-    { href: "/our-brands", label: "Our Brands" },
+    { href: "/", label: "Main" },
+    
     { href: "/terms-and-condition", label: "Terms & Conditions" },
   ];
 
@@ -77,7 +76,7 @@ const Footer = () => {
               <div className="mb-5 flex justify-center">
                 <a href="/">
                   <img
-                    src="/images/corelogo.png"
+                    src="/nex.png"
                     alt="Nexcore logo"
                     className="w-[280px] sm:w-[260px] md:w-[300px] lg:w-[340px] h-auto object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
                   />
@@ -207,7 +206,7 @@ const Footer = () => {
               </p>
               <div className="hidden sm:block w-px h-4 bg-slate-300/50 mx-6"></div>
               <p className="text-slate-600 text-sm order-1 sm:order-2 mt-1 sm:mt-0">
-                &copy; 2011 – {new Date().getFullYear()} NexCoreAlliance. All
+                &copy; 2011 – {new Date().getFullYear()} Nexcore Alliance. All
                 rights reserved.
               </p>
             </div>

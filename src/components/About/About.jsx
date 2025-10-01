@@ -169,7 +169,7 @@ const About = () => {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-2xl lg:text-3xl font-bold text-[#051d40]">
-                    Nex Core Alliance LLP
+                    Nexcore Alliance LLP
                   </h3>
                   <p className="text-blue-600 font-medium">
                     Visionary Organization
@@ -179,7 +179,7 @@ const About = () => {
 
               <div className="space-y-1">
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Nex Core Alliance LLP is a visionary organization at the
+                  Nexcore Alliance LLP is a visionary organization at the
                   forefront of driving change in the fields of{" "}
                   <span className="font-semibold text-blue-600">
                     STEM education
@@ -249,7 +249,7 @@ const About = () => {
                     {" "}
                     technology
                   </span>{" "}
-                  are the twin pillars of progress, Nex Core Alliance LLP seeks
+                  are the twin pillars of progress, Nexcore Alliance LLP seeks
                   to create a sustainable impact.
                 </p>
                 <p className="text-gray-600 leading-relaxed">

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState("/");
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,15 +16,17 @@ export default function Navbar() {
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }
-    // Always return a cleanup function for SSR
-    return () => {};
   }, []);
+
+  const handleLinkClick = (href) => {
+    setActiveLink(href);
+    setIsOpen(false); // Close mobile menu
+  };
+
   const menuItems = [
-    { href: "/", label: "Home" },
-    { href: "/about-us", label: "About Us" },
-    { href: "/our-brands", label: "Our Brands" },
-    { href: "/our-masterminds", label: "Masterminds" },
-    { href: "/contact-us", label: "Contact Us" },
+    { href: "/", label: "Main" },
+    { href: "/our-masterminds", label: "Innovators" },
+    { href: "/contact-us", label: "Talk to us" },
   ];
 
   return (
@@ -36,9 +39,9 @@ export default function Navbar() {
     >
       <div className="flex justify-between items-center h-20 px-5 max-w-7xl mx-auto">
         {/* Logo */}
-        <Link href="/" className="relative flex-shrink-0">
+        <Link href="/" onClick={() => handleLinkClick("/")}>
           <Image
-            src="/images/corelogo.png"
+            src="/nex.png"
             alt="Nexcore Logo"
             width={200}
             height={150}

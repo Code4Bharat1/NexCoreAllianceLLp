@@ -138,7 +138,7 @@ const MissionVision = () => {
                   </h3>
                 </div>
                 <p className="text-gray-700 text-base leading-relaxed mb-6">
-                  At Nex Core Alliance LLP, our vision is to be a global leader in STEM education, IT solutions, and professional training.
+                  At Nexcore Alliance LLP, our vision is to be a global leader in STEM education, IT solutions, and professional training.
                 </p>
                 <div className="space-y-3">
                   {visionItems.map((item, index) => (
