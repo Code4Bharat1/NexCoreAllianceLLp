@@ -6,35 +6,35 @@ import React from "react";
 
 // ✅ SEO Metadata for About Page
 export const metadata = {
-  title: "About Us | NexCoreAlliance",
+  title: "About Us | Nexcorealliance",
   description:
-    "Learn about NexCoreAlliance, a parent company managing multiple brands with a focus on innovation, strategic growth, and business solutions.",
+    "Learn about Nexcorealliance, a parent company managing multiple brands with a focus on innovation, strategic growth, and business solutions.",
   keywords:
-    "About NexCoreAlliance, parent company, innovation, business solutions, strategic growth, corporate brands",
+    "About Nexcorealliance, parent company, innovation, business solutions, strategic growth, corporate brands",
   openGraph: {
-    title: "About Us | NexCoreAlliance",
+    title: "About Us | Nexcorealliance",
     description:
-      "Discover NexCoreAlliance's journey, vision, and mission as a parent company empowering multiple brands for sustainable growth.",
-    url: "https://www.nexcorealliance.com/about-us",
+      "Discover Nexcorealliance's journey, vision, and mission as a parent company empowering multiple brands for sustainable growth.",
+    url: "https://www.Nexcorealliance.com/about-us",
     type: "website",
     images: [
       {
         url: "/seo-banner.png", // place in /public
         width: 1200,
         height: 630,
-        alt: "About NexCoreAlliance",
+        alt: "About Nexcorealliance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us | NexCoreAlliance",
+    title: "About Us | Nexcorealliance",
     description:
-      "Explore NexCoreAlliance’s vision, mission, and leadership driving growth across multiple brands.",
+      "Explore Nexcorealliance’s vision, mission, and leadership driving growth across multiple brands.",
     images: ["/seo-banner.png"],
   },
   alternates: {
-    canonical: "https://www.nexcorealliance.com/about-us",
+    canonical: "https://www.Nexcorealliance.com/about-us",
   },
   robots: {
     index: true,

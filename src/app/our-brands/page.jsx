@@ -7,15 +7,15 @@ import React from "react";
 
 // ✅ SEO Metadata for Our Brands Page
 export const metadata = {
-  title: "Our Brands | NexCoreAlliance",
+  title: "Our Brands | Nexcorealliance",
   description:
-    "Discover the diverse portfolio of brands under NexCoreAlliance, driving innovation, growth, and strategic business solutions across industries.",
+    "Discover the diverse portfolio of brands under Nexcorealliance, driving innovation, growth, and strategic business solutions across industries.",
   keywords:
-    "NexCoreAlliance brands, our brands, business portfolio, innovation, strategic growth, company divisions",
+    "Nexcorealliance brands, our brands, business portfolio, innovation, strategic growth, company divisions",
   openGraph: {
-    title: "Our Brands | NexCoreAlliance",
+    title: "Our Brands | Nexcorealliance",
     description:
-      "Explore the different brands managed by NexCoreAlliance, each contributing to growth, innovation, and corporate success.",
+      "Explore the different brands managed by Nexcorealliance, each contributing to growth, innovation, and corporate success.",
     url: "https://www.nexcorealliance.com/our-brands",
     type: "website",
     images: [
@@ -23,15 +23,15 @@ export const metadata = {
         url: "/seo-banner.png",
         width: 1200,
         height: 630,
-        alt: "Our Brands - NexCoreAlliance",
+        alt: "Our Brands - Nexcorealliance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Brands | NexCoreAlliance",
+    title: "Our Brands | Nexcorealliance",
     description:
-      "NexCoreAlliance manages multiple brands focused on innovation, growth, and business solutions across industries.",
+      "Nexcorealliance manages multiple brands focused on innovation, growth, and business solutions across industries.",
     images: ["/seo-banner.png"],
   },
   alternates: {

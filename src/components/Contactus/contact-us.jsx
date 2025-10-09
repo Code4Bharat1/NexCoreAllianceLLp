@@ -3,15 +3,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaFacebook, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
 // ✅ SEO Metadata for Contact Page
 export const metadata = {
-  title: "Contact Us | NexCoreAlliance",
+  title: "Contact Us | Nexcorealliance",
   description:
-    "Get in touch with NexCoreAlliance — whether you have a question, partnership inquiry, or need support, our team is ready to assist you.",
+    "Get in touch with Nexcorealliance — whether you have a question, partnership inquiry, or need support, our team is ready to assist you.",
   keywords:
-    "NexCoreAlliance contact, customer support, partnership inquiry, careers, technical support, contact form",
+    "Nexcorealliance contact, customer support, partnership inquiry, careers, technical support, contact form",
   openGraph: {
-    title: "Contact Us | NexCoreAlliance",
+    title: "Contact Us | Nexcorealliance",
     description:
-      "Reach out to NexCoreAlliance for partnerships, support, or general inquiries. Connect with our team today.",
+      "Reach out to Nexcorealliance for partnerships, support, or general inquiries. Connect with our team today.",
     url: "https://www.nexcorealliance.com/contact",
     type: "website",
     images: [
@@ -19,15 +19,15 @@ export const metadata = {
         url: "/seo-banner.png",
         width: 1200,
         height: 630,
-        alt: "Contact NexCoreAlliance",
+        alt: "Contact Nexcorealliance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us | NexCoreAlliance",
+    title: "Contact Us | Nexcorealliance",
     description:
-      "Connect with NexCoreAlliance for inquiries, support, and partnership opportunities.",
+      "Connect with Nexcorealliance for inquiries, support, and partnership opportunities.",
     images: ["/seo-banner.png"],
   },
   alternates: {
@@ -208,23 +208,23 @@ Sent from Nexcore Alliance Website`;
       icon: PhoneIcon,
       title: "Phone",
       content: "+91 95944 30295",
-      subContent: "Mon-Fri 9:00 AM - 6:00 PM",
+      subContent: "Mon-Sat 08:00 AM - 08:00 PM",
       color: "from-blue-500 to-cyan-500",
       href: "tel:+919594430295",
     },
     {
       icon: EmailIcon,
       title: "Email",
-      content: "hello@nexcorealliance.com",
+      content: "nexcorealliance@gmail.com",
       subContent: "We'll respond within 24 hours",
       color: "from-purple-500 to-pink-500",
-      href: "mailto:hello@nexcorealliance.com",
+      href: "mailto:nexcorealliance@gmail.com",
     },
     {
       icon: MapIcon,
       title: "Office",
       content: "Mumbai, Maharashtra",
-      subContent: "India - 400001",
+      subContent: "India - 400070",
       color: "from-green-500 to-emerald-500",
       href: "https://maps.app.goo.gl/VBg1XznP8dy9dzGd6",
     },
@@ -251,7 +251,7 @@ Sent from Nexcore Alliance Website`;
     },
     {
       icon: FaInstagram,
-      href: "https://www.instagram.com/nexcorealliance/",
+      href: "https://www.instagram.com/Nexcorealliancellp/",
       color: "hover:text-pink-500",
     },
     {
@@ -308,7 +308,7 @@ Sent from Nexcore Alliance Website`;
               </span>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-[#051d40] via-[#1976d2] to-[#051d40] bg-clip-text text-transparent">
-                Contact Us
+                Talk to us 
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
                 Ready to transform your vision into reality? Let's discuss how

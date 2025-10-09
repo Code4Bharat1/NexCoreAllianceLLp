@@ -8,15 +8,15 @@ import TermsAndConditions from '@/components/TermsAndCondition/TermsAndCondition
 
 // ✅ SEO Metadata for Terms & Conditions Page
 export const metadata = {
-  title: "Terms & Conditions | NexCoreAlliance",
+  title: "Terms & Conditions | Nexcorealliance",
   description:
-    "Read the Terms & Conditions of NexCoreAlliance to understand our policies, guidelines, and user responsibilities when engaging with our brands and services.",
+    "Read the Terms & Conditions of Nexcorealliance to understand our policies, guidelines, and user responsibilities when engaging with our brands and services.",
   keywords:
-    "NexCoreAlliance Terms and Conditions, policies, guidelines, user agreement, company policies",
+    "Nexcorealliance Terms and Conditions, policies, guidelines, user agreement, company policies",
   openGraph: {
-    title: "Terms & Conditions | NexCoreAlliance",
+    title: "Terms & Conditions | Nexcorealliance",
     description:
-      "Learn about the Terms & Conditions that govern your use of NexCoreAlliance’s website, brands, and services.",
+      "Learn about the Terms & Conditions that govern your use of Nexcorealliance’s website, brands, and services.",
     url: "https://www.nexcorealliance.com/terms-and-conditions",
     type: "website",
     images: [
@@ -24,15 +24,15 @@ export const metadata = {
         url: "/seo-banner.png",
         width: 1200,
         height: 630,
-        alt: "Terms and Conditions - NexCoreAlliance",
+        alt: "Terms and Conditions - Nexcorealliance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms & Conditions | NexCoreAlliance",
+    title: "Terms & Conditions | Nexcorealliance",
     description:
-      "Review NexCoreAlliance’s Terms & Conditions for clear guidelines on our services, policies, and brand use.",
+      "Review Nexcorealliance’s Terms & Conditions for clear guidelines on our services, policies, and brand use.",
     images: ["/seo-banner.png"],
   },
   alternates: {

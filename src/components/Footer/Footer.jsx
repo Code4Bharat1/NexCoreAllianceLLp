@@ -53,15 +53,15 @@ const Footer = () => {
     { href: "/policies/contact", label: "Contact" },
     { href: "/policies/termsandcondition", label: "Terms and Conditions" },
     { href: "/policies/privacy", label: "Privacy Policy" },
-    { href: "/policies/product-pricing", label: "Product Pricing" },
-    { href: "/policies/delivery-policy", label: "Delivery Policy" },
+    // { href: "/policies/product-pricing", label: "Product Pricing" },
+    // { href: "/policies/delivery-policy", label: "Delivery Policy" },
     { href: "/policies/cancellation-policy", label: "Cancellation Policy" },
     { href: "/policies/refund-policy", label: "Refund Policy" },
   ];
 
   return (
     <>
-      <footer className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 mt-16 overflow-hidden select-none">
+      <footer className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50  overflow-hidden select-none">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
@@ -73,7 +73,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Follow Us Section */}
             <div>
-              <div className="mb-5 flex justify-center">
+              <div className=" flex justify-center">
                 <a href="/">
                   <img
                     src="/nex.png"
@@ -173,7 +173,7 @@ const Footer = () => {
                   <div>
                     <p className="text-black text-xs">Address</p>
                     <a
-                      href="https://maps.app.goo.gl/VBg1XznP8dy9dzGd6"
+                      href="https://maps.app.goo.gl/dW29tTp2Xd1gk9168 "
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-black hover:text-purple-500 transition-colors duration-300 flex items-start text-sm"
@@ -229,25 +229,45 @@ const Footer = () => {
 
       {/* Floating Buttons */}
       <div className="fixed bottom-6 right-6 flex flex-col space-y-3 z-50">
-        <button
-          onClick={scrollToTop}
-          className={`p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 ${
-            showBackToTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-          aria-label="Back to top"
-        >
-          <ArrowUp className="h-4 w-4 text-white" />
-        </button>
-        <a
-          href="https://wa.me/9594430295"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group p-4 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-          aria-label="Contact us on WhatsApp"
-        >
-          <MessageCircle className="h-6 w-6 text-white" />
-        </a>
-      </div>
+  {/* Back to Top Button */}
+  <button
+    onClick={scrollToTop}
+    className={`flex items-center justify-center p-4 rounded-full bg-gradient-to-r from-[#1976d2] to-[#051d40] shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-500 ${
+      showBackToTop
+        ? "opacity-100 translate-y-0"
+        : "opacity-0 translate-y-10 pointer-events-none"
+    }`}
+    aria-label="Back to top"
+  >
+    <ArrowUp className="h-5 w-5 text-white animate-bounce-slow" />
+  </button>
+
+  {/* WhatsApp Button */}
+  <a
+    href="https://wa.me/9594430295"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center p-4 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-500"
+    aria-label="Contact us on WhatsApp"
+  >
+    <MessageCircle className="h-6 w-6 text-white" />
+  </a>
+
+  <style jsx>{`
+    @keyframes bounce-slow {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+    .animate-bounce-slow {
+      animation: bounce-slow 2s infinite;
+    }
+  `}</style>
+</div>
+
     </>
   );
 };

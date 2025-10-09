@@ -6,15 +6,15 @@ import React from "react";
 
 // ✅ SEO Metadata for Contact Page
 export const metadata = {
-  title: "Contact Us | NexCoreAlliance",
+  title: "Contact Us | Nexcorealliance",
   description:
-    "Get in touch with NexCoreAlliance for business inquiries, partnerships, or brand-related support. We’re here to help you with your questions.",
+    "Get in touch with Nexcorealliance for business inquiries, partnerships, or brand-related support. We’re here to help you with your questions.",
   keywords:
-    "Contact NexCoreAlliance, business inquiries, partnerships, support, parent company, corporate contact",
+    "Contact Nexcorealliance, business inquiries, partnerships, support, parent company, corporate contact",
   openGraph: {
-    title: "Contact Us | NexCoreAlliance",
+    title: "Contact Us | Nexcorealliance",
     description:
-      "Reach out to NexCoreAlliance for collaborations, partnerships, or customer support across our multiple brands.",
+      "Reach out to Nexcorealliance for collaborations, partnerships, or customer support across our multiple brands.",
     url: "https://www.nexcorealliance.com/contact-us",
     type: "website",
     images: [
@@ -22,15 +22,15 @@ export const metadata = {
         url: "/seo-banner.png",
         width: 1200,
         height: 630,
-        alt: "Contact NexCoreAlliance",
+        alt: "Contact Nexcorealliance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us | NexCoreAlliance",
+    title: "Contact Us | Nexcorealliance",
     description:
-      "Connect with NexCoreAlliance for inquiries, partnerships, and support across our multiple brands.",
+      "Connect with Nexcorealliance for inquiries, partnerships, and support across our multiple brands.",
     images: ["/seo-banner.png"],
   },
   alternates: {

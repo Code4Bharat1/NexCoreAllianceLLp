@@ -2,13 +2,13 @@
 
 import React, { useEffect, useRef, useState } from "react";
 export const metadata = {
-  title: "About Us | NexCoreAlliance",
+  title: "About Us | Nexcore alliance",
   description:
-    "Learn about NexCoreAlliance — a visionary organization driving innovation in STEM education, IT solutions, and professional development.",
+    "Learn about Nexcore alliance — a visionary organization driving innovation in STEM education, IT solutions, and professional development.",
   keywords:
     "NexCoreAlliance, About Us, STEM education, IT solutions, professional development, technology solutions",
   openGraph: {
-    title: "About Us | NexCoreAlliance",
+    title: "About Us | Nexcore alliance",
     description:
       "Discover NexCoreAlliance's mission, vision, and core values. Pioneering the future through education, innovation, and technology.",
     url: "https://www.nexcorealliance.com/about",
@@ -18,15 +18,15 @@ export const metadata = {
         url: "/seo-banner.png",
         width: 1200,
         height: 630,
-        alt: "About Us - NexCoreAlliance",
+        alt: "About Us - Nexcore alliance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us | NexCoreAlliance",
+    title: "About Us | Nexcorealliance",
     description:
-      "Explore NexCoreAlliance's journey, mission, and commitment to education, technology, and professional development.",
+      "Explore Nexcorealliance's journey, mission, and commitment to education, technology, and professional development.",
     images: ["/seo-banner.png"],
   },
   alternates: {
@@ -71,7 +71,7 @@ const About = () => {
     <section
       ref={sectionRef}
       id="about-us"
-      className="relative bg-gradient-to-br from-[#DBE2EF] via-[#F8FAFF] to-[#E8F2FF] text-gray-800 mt-28 overflow-hidden select-none"
+      className="relative bg-gradient-to-br from-[#DBE2EF] via-[#F8FAFF] to-[#E8F2FF] text-gray-800  overflow-hidden select-none"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">

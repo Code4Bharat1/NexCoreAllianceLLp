@@ -44,8 +44,7 @@ const Directors = () => {
         description:
           "Accomplished financial strategist with extensive experience in guiding organizations.",
         image: "/neha.png",
-        linkedIn:
-          "https://www.linkedin.com/in/neha-mehnaz-awab-fakih-2359a189",
+        linkedIn: "https://www.linkedin.com/in/neha-mehnaz-awab-fakih-2359a189",
         whatsapp: "919022477293",
       },
       {
@@ -96,7 +95,9 @@ const Directors = () => {
     return [...Array(shapeCount)].map((_, i) => (
       <div
         key={i}
-        className={`absolute opacity-${isMobile ? "5" : "15"} animate-float will-change-transform ${
+        className={`absolute opacity-${
+          isMobile ? "5" : "15"
+        } animate-float will-change-transform ${
           i % 3 === 0
             ? "w-1 h-1 md:w-2 md:h-2 bg-blue-500 rounded-full"
             : i % 3 === 1
@@ -128,7 +129,7 @@ const Directors = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ItemList",
-              "itemListElement": directors.map((d, index) => ({
+              itemListElement: directors.map((d, index) => ({
                 "@type": "Person",
                 position: index + 1,
                 name: d.name,
@@ -161,7 +162,11 @@ const Directors = () => {
           <div
             className={`transition-all ${
               isMobile ? "duration-500" : "duration-700"
-            } ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            } ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
           >
             <span className="inline-block text-blue-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 md:mb-4 px-2 md:px-4 py-1 md:py-2 bg-white/60 backdrop-blur-sm rounded-full border border-blue-200/30">
               Leadership Excellence
@@ -171,7 +176,7 @@ const Directors = () => {
               id="directors-heading"
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-6 bg-gradient-to-r from-[#051d40] via-[#1976d2] to-[#051d40] bg-clip-text text-transparent leading-tight"
             >
-              Masterminds
+              Innovators
             </h2>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4 md:mb-8 px-2 md:px-4">
@@ -184,17 +189,23 @@ const Directors = () => {
             <div
               className={`w-8 md:w-16 h-0.5 bg-gradient-to-r from-transparent to-blue-600 transition-all ${
                 isMobile ? "duration-500" : "duration-700"
-              } ${isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
+              } ${
+                isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+              }`}
             />
             <div
               className={`w-2 h-2 md:w-4 md:h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-2 md:mx-4 transition-all ${
                 isMobile ? "duration-500" : "duration-700"
-              } delay-200 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"}`}
+              } delay-200 ${
+                isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"
+              }`}
             />
             <div
               className={`w-8 md:w-16 h-0.5 bg-gradient-to-l from-transparent to-purple-600 transition-all ${
                 isMobile ? "duration-500" : "duration-700"
-              } ${isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
+              } ${
+                isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+              }`}
             />
           </div>
         </div>
@@ -222,7 +233,9 @@ const Directors = () => {
 
         {/* Leadership Stats */}
         <div
-          className={`transition-all ${isMobile ? "duration-500" : "duration-700"} delay-500 ${
+          className={`transition-all ${
+            isMobile ? "duration-500" : "duration-700"
+          } delay-500 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -249,28 +262,28 @@ const Directors = () => {
               Ready to Connect with Our Leadership?
             </h3>
             <p className="text-gray-600 mb-4 md:mb-8 max-w-2xl mx-auto text-sm sm:text-base md:text-base px-2">
-              Discover how our experienced leadership team can help transform your vision into reality.
+              Discover how our experienced leadership team can help transform
+              your vision into reality.
             </p>
-            <Link href="/contact-us" passHref>
-              <a
-                className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
-                aria-label="Schedule a meeting with leadership"
+            <Link
+              href="/contact-us"
+              className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
+              aria-label="Schedule a meeting with leadership"
+            >
+              <span>Schedule a Meeting</span>
+              <svg
+                className="w-4 h-4 md:w-5 md:h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <span>Schedule a Meeting</span>
-                <svg
-                  className="w-4 h-4 md:w-5 md:h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </a>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
             </Link>
           </div>
         </div>
@@ -279,28 +292,56 @@ const Directors = () => {
       {/* CSS Animations */}
       <style jsx>{`
         @keyframes blob-slow {
-          0%, 100% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(10px, -15px) scale(1.02); }
-          66% { transform: translate(-10px, 10px) scale(0.98); }
+          0%,
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(10px, -15px) scale(1.02);
+          }
+          66% {
+            transform: translate(-10px, 10px) scale(0.98);
+          }
         }
 
         @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-10px) rotate(45deg); }
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-10px) rotate(45deg);
+          }
         }
 
-        .animate-blob-slow { animation: blob-slow 8s ease-in-out infinite; }
-        .animate-float { animation: float linear infinite; }
-        .animation-delay-3000 { animation-delay: 3s; }
-        .will-change-transform { will-change: transform; }
+        .animate-blob-slow {
+          animation: blob-slow 8s ease-in-out infinite;
+        }
+        .animate-float {
+          animation: float linear infinite;
+        }
+        .animation-delay-3000 {
+          animation-delay: 3s;
+        }
+        .will-change-transform {
+          will-change: transform;
+        }
 
         @media (max-width: 767px) {
-          .animate-blob-slow { animation: none; }
-          .animate-float { animation-duration: 2s; animation-iteration-count: 3; }
+          .animate-blob-slow {
+            animation: none;
+          }
+          .animate-float {
+            animation-duration: 2s;
+            animation-iteration-count: 3;
+          }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .animate-blob-slow, .animate-float { animation: none; }
+          .animate-blob-slow,
+          .animate-float {
+            animation: none;
+          }
         }
       `}</style>
     </section>

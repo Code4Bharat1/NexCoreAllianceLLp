@@ -7,15 +7,15 @@ import Footer from "@/components/Footer/Footer";
 
 // ✅ SEO Metadata for Our Masterminds Page
 export const metadata = {
-  title: "Our Masterminds | NexCoreAlliance",
+  title: "Our Masterminds | Nexcorealliance",
   description:
-    "Meet the visionary leaders and directors behind NexCoreAlliance who drive innovation, growth, and strategic business solutions.",
+    "Meet the visionary leaders and directors behind Nexcorealliance who drive innovation, growth, and strategic business solutions.",
   keywords:
-    "NexCoreAlliance masterminds, directors, leadership team, company leaders, corporate vision, innovation leaders",
+    "Nexcorealliance masterminds, directors, leadership team, company leaders, corporate vision, innovation leaders",
   openGraph: {
-    title: "Our Masterminds | NexCoreAlliance",
+    title: "Our Masterminds | Nexcorealliance",
     description:
-      "Discover the leadership team of NexCoreAlliance – the masterminds driving innovation, growth, and success across multiple brands.",
+      "Discover the leadership team of Nexcorealliance – the masterminds driving innovation, growth, and success across multiple brands.",
     url: "https://www.nexcorealliance.com/our-masterminds",
     type: "website",
     images: [
@@ -23,15 +23,15 @@ export const metadata = {
         url: "/seo-banner.png",
         width: 1200,
         height: 630,
-        alt: "Our Masterminds - NexCoreAlliance Leadership Team",
+        alt: "Our Masterminds - Nexcorealliance Leadership Team",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Masterminds | NexCoreAlliance",
+    title: "Our Masterminds | Nexcorealliance",
     description:
-      "Get to know the directors and leadership team of NexCoreAlliance who drive innovation and growth across multiple brands.",
+      "Get to know the directors and leadership team of Nexcorealliance who drive innovation and growth across multiple brands.",
     images: ["/seo-banner.png"],
   },
   alternates: {

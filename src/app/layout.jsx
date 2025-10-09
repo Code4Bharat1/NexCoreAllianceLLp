@@ -4,20 +4,20 @@ import Navbar from "../components/Navbar/Navbar";
 
 // ✅ Next.js Metadata API
 export const metadata = {
-  title: "NexCoreAlliance - Parent Company with Multiple Brands",
+  title: "Nexcorealliance - Parent Company with Multiple Brands",
   description:
-    "NexCoreAlliance is a parent company managing multiple brands, delivering innovation, growth, and strategic business solutions.",
+    "Nexcorealliance is a parent company managing multiple brands, delivering innovation, growth, and strategic business solutions.",
   keywords:
-    "NexCoreAlliance, parent company, business solutions, brands, innovation, growth, strategic solutions, corporate management",
+    "Nexcorealliance, parent company, business solutions, brands, innovation, growth, strategic solutions, corporate management",
   metadataBase: new URL("https://www.nexcorealliance.com"),
 
   // ✅ Open Graph
   openGraph: {
-    title: "NexCoreAlliance - Parent Company with Multiple Brands",
+    title: "Nexcorealliance - Parent Company with Multiple Brands",
     description:
-      "NexCoreAlliance is a parent company managing multiple brands, delivering innovation, growth, and strategic business solutions.",
+      "Nexcorealliance is a parent company managing multiple brands, delivering innovation, growth, and strategic business solutions.",
     url: "https://www.nexcorealliance.com",
-    siteName: "NexCoreAlliance",
+    siteName: "Nexcorealliance",
     locale: "en_US",
     type: "website",
     images: [
@@ -25,7 +25,7 @@ export const metadata = {
         url: "/seo-banner.png", // must be in public/
         width: 1200,
         height: 630,
-        alt: "NexCoreAlliance - Parent Company Banner",
+        alt: "Nexcorealliance - Parent Company Banner",
       },
     ],
   },
@@ -33,10 +33,10 @@ export const metadata = {
   // ✅ Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "NexCoreAlliance - Parent Company with Multiple Brands",
+    title: "Nexcorealliance - Parent Company with Multiple Brands",
     description:
-      "NexCoreAlliance is a parent company managing multiple brands, delivering innovation, growth, and strategic business solutions.",
-    creator: "@NexCoreAlliance", // if you have a Twitter handle
+      "Nexcorealliance is a parent company managing multiple brands, delivering innovation, growth, and strategic business solutions.",
+    creator: "@Nexcorealliance", // if you have a Twitter handle
     images: ["/seo-banner.png"],
   },
 
@@ -81,13 +81,13 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "NexCoreAlliance",
+              name: "Nexcorealliance",
               url: "https://www.nexcorealliance.com",
               logo: "https://www.nexcorealliance.com/seo-banner.png",
               sameAs: [
-                "https://www.facebook.com/NexCoreAlliance",
-                "https://www.linkedin.com/company/nexcorealliance",
-                "https://twitter.com/NexCoreAlliance",
+                "https://www.facebook.com/Nexcorealliance",
+                "https://www.linkedin.com/company/Nexcorealliance",
+                "https://twitter.com/Nexcorealliance",
               ],
             }),
           }}
