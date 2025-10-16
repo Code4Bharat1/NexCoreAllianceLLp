@@ -31,13 +31,13 @@ const MissionVision = () => {
 
   const visionItems = [
     {
+      icon: <FaRocket aria-hidden="true" />,
+      text: "Driving digital transformation for businesses with cutting-edge IT solutions.",
+    },{
       icon: <FaGraduationCap aria-hidden="true" />,
       text: "Empowering educators and students through practical and innovative STEM programs.",
     },
-    {
-      icon: <FaRocket aria-hidden="true" />,
-      text: "Driving digital transformation for businesses with cutting-edge IT solutions.",
-    },
+    ,
     {
       icon: <FaBriefcase aria-hidden="true" />,
       text: "Creating job opportunities and equipping professionals with skills to thrive in tech.",
@@ -45,8 +45,9 @@ const MissionVision = () => {
   ];
 
   const missionItems = [
+     { icon: <FaGlobe aria-hidden="true" />, text: "Provide world-class IT solutions to businesses globally." },
     { icon: <FaChartBar aria-hidden="true" />, text: "Reach 10 million teachers in STEM education by 2030." },
-    { icon: <FaGlobe aria-hidden="true" />, text: "Provide world-class IT solutions to businesses globally." },
+    
     { icon: <FaBullseye aria-hidden="true" />, text: "Train and place thousands of students in IT roles." },
   ];
 

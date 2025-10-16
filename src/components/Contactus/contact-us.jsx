@@ -594,7 +594,7 @@ Sent from Nexcore Alliance Website`;
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
+            {/* <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div>
                   <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -630,7 +630,7 @@ Sent from Nexcore Alliance Website`;
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

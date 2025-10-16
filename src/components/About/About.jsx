@@ -181,14 +181,15 @@ const About = () => {
                 <p className="text-gray-700 text-lg leading-relaxed">
                   Nexcore Alliance LLP is a visionary organization at the
                   forefront of driving change in the fields of{" "}
-                  <span className="font-semibold text-blue-600">
-                    STEM education
-                  </span>
-                  ,
                   <span className="font-semibold text-purple-600">
                     {" "}
                     IT solutions
+                  </span> , 
+                  <span className="font-semibold text-blue-600">
+                    STEM education
                   </span>
+                  
+                  
                   , and
                   <span className="font-semibold text-green-600">
                     {" "}

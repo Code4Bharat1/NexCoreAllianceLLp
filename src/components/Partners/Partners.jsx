@@ -379,7 +379,7 @@ const Partners = () => {
                 <div className="text-sm md:text-base text-gray-600 font-medium">Active Projects</div>
               </div>
               <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 md:p-6 shadow-sm">
-                <div className="text-2xl md:text-3xl font-bold text-[#27ae60] mb-1">5</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#27ae60] mb-1">3</div>
                 <div className="text-sm md:text-base text-gray-600 font-medium">Industry Sectors</div>
               </div>
               <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 md:p-6 shadow-sm">

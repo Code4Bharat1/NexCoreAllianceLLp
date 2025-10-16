@@ -61,12 +61,7 @@ const Directors = () => {
   );
 
   const stats = useMemo(
-    () => [
-      { number: "15+", label: "Years Combined Experience" },
-      { number: "500+", label: "Projects Led" },
-      { number: "50+", label: "Team Members" },
-      { number: "3", label: "Countries Served" },
-    ],
+    () => 
     []
   );
 
@@ -239,7 +234,7 @@ const Directors = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <div className="bg-white/80 backdrop-blur-sm rounded-lg md:rounded-xl lg:rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg border border-white/20">
+          {/* <div className="bg-white/80 backdrop-blur-sm rounded-lg md:rounded-xl lg:rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg border border-white/20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 lg:gap-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -252,7 +247,7 @@ const Directors = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Call-to-Action */}
