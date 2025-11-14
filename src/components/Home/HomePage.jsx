@@ -9,12 +9,14 @@ import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 // Import client components normally
 import Hero from "../Hero/Hero";
 import Partners from "../Partners/Partners";
+import ServicesSection from "../services/services";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
       <MissionVision />
+      <ServicesSection/>
       <About />
       <OurBrands />
       <WhyChooseUs />

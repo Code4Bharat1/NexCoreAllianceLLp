@@ -1,343 +1,358 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
-const Hero = () => {
+const ProductHero = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [scrollY, setScrollY] = useState(0);
-  const heroRef = useRef(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 200);
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 20,
-        y: (e.clientY / window.innerHeight - 0.5) * 20,
-      });
-    };
+  const features = [
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      label: "Faster Time to Market",
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+        </svg>
+      ),
+      label: "Private Cloud",
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+      label: "On Premise",
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      label: "100% Secured",
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      ),
+      label: "Own Your Data and IP",
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      label: "Our Full Stack Team",
+    },
+  ];
 
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  // Generate hexagon positions for background pattern
+  const generateHexagons = () => {
+    const hexagons = [];
+    const icons = [
+      // Robot/AI icon
+      <svg key="robot" className="w-8 h-8 text-teal-300/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+      </svg>,
+      // Code icon
+      <svg key="code" className="w-8 h-8 text-teal-300/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>,
+      // Database icon
+      <svg key="database" className="w-8 h-8 text-teal-300/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+      </svg>,
+      // Chart icon
+      <svg key="chart" className="w-8 h-8 text-teal-300/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>,
+      // Cloud icon
+      <svg key="cloud" className="w-8 h-8 text-teal-300/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+      </svg>,
+      // Globe icon
+      <svg key="globe" className="w-8 h-8 text-teal-300/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>,
+      // Mobile icon
+      <svg key="mobile" className="w-8 h-8 text-teal-300/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+      </svg>,
+      // Chat icon
+      <svg key="chat" className="w-8 h-8 text-teal-300/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>,
+    ];
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    const positions = [
+      { top: "5%", left: "8%" },
+      { top: "15%", right: "12%" },
+      { top: "45%", left: "5%" },
+      { top: "25%", left: "15%" },
+      { top: "60%", right: "8%" },
+      { bottom: "15%", left: "10%" },
+      { bottom: "25%", right: "15%" },
+      { top: "35%", right: "18%" },
+    ];
+
+    positions.forEach((pos, index) => {
+      hexagons.push(
+        <div
+          key={index}
+          className="absolute animate-float"
+          style={{
+            ...pos,
+            animationDelay: `${index * 0.5}s`,
+            animationDuration: `${4 + (index % 3)}s`,
+          }}
+        >
+          <div className="relative w-20 h-20 flex items-center justify-center">
+            {/* Hexagon shape */}
+            <div className="absolute inset-0 transform rotate-0">
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                <polygon
+                  points="50 1 95 25 95 75 50 99 5 75 5 25"
+                  fill="rgba(255, 255, 255, 0.4)"
+                  stroke="rgba(94, 234, 212, 0.3)"
+                  strokeWidth="1"
+                />
+              </svg>
+            </div>
+            {/* Icon inside hexagon */}
+            <div className="relative z-10">
+              {icons[index % icons.length]}
+            </div>
+          </div>
+        </div>
+      );
+    });
+
+    return hexagons;
+  };
 
   return (
-    <section
-      ref={heroRef}
-      className="relative min-h-screen overflow-hidden flex items-center select-none"
-      aria-labelledby="hero-heading"
-    >
-      {/* Animated Background - About Theme */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#DBE2EF] via-[#F8FAFF] to-[#E8F2FF]">
-        {/* Animated Blobs */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div
-            className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"
-            style={{
-              transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-              transition: "transform 0.3s ease-out",
-            }}
-          ></div>
-          <div
-            className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"
-            style={{
-              transform: `translate(${-mousePosition.x}px, ${
-                mousePosition.y
-              }px)`,
-              transition: "transform 0.3s ease-out",
-            }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"
-            style={{
-              transform: `translate(${
-                mousePosition.x * 0.5
-              }px, ${-mousePosition.y}px)`,
-              transition: "transform 0.3s ease-out",
-            }}
-          ></div>
+    <section className="relative min-h-screen overflow-hidden flex items-center select-none bg-gradient-to-br from-[#E0F2F1] via-[#B2DFDB] to-[#80CBC4]">
+      {/* Hexagonal Background Pattern */}
+      <div className="absolute inset-0 overflow-hidden">
+        {generateHexagons()}
+      </div>
+
+      {/* Diagonal line patterns */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 left-0 w-full h-full">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute h-px bg-teal-600"
+              style={{
+                width: "200%",
+                top: `${i * 8}%`,
+                left: "-50%",
+                transform: `rotate(-15deg)`,
+              }}
+            />
+          ))}
         </div>
-
-        {/* Animated Grid */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(5,29,64,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(5,29,64,0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "50px 50px",
-            transform: `translate(${mousePosition.x * 0.3}px, ${
-              mousePosition.y * 0.3
-            }px)`,
-            transition: "transform 0.3s ease-out",
-          }}
-        />
       </div>
 
-      {/* Floating particles effect */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-500 rounded-full opacity-30 animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
-            }}
-          ></div>
-        ))}
-      </div>
-
-      {/* Parallax content container */}
+      {/* Content Container */}
       <div
-        className={`relative max-w-7xl mx-auto px-4 py-24 md:py-32 w-full transition-all duration-1000 ${
+        className={`relative max-w-7xl mx-auto px-4 py-24 md:py-32 w-full transition-all duration-1000 z-10 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
-        style={{
-          userSelect: "none",
-          transform: `translateY(${scrollY * 0.3}px)`,
-        }}
       >
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          {/* Badge with pulse effect */}
-          <div
-            className={`inline-flex items-center gap-2 bg-white/80 backdrop-blur-md border border-blue-200 rounded-full px-5 py-2.5 mb-8 transition-all duration-700 delay-200 hover:scale-105 hover:bg-white/90 ${
-              isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-            }`}
-          >
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-600"></span>
-            </span>
-            <span className="text-sm font-semibold text-blue-600 tracking-wide uppercase">
-              Innovating Since 2011
-            </span>
-          </div>
-
-          {/* Main Heading with plain text */}
+        <div className="flex flex-col items-center text-center">
+          {/* Main Heading */}
           <h1
-            id="hero-heading"
-            className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-[#051d40] via-[#1976d2] to-[#051d40] bg-clip-text text-transparent transition-all duration-700 delay-300 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
+            className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-6 text-gray-900 max-w-5xl leading-tight transition-all duration-700 delay-200 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Empowering Innovation,
+            A Full-Cycle Expertise in Product Design & Development
             <br />
-            Education & Technology
+            <span className="text-gray-800">
+              Serving Businesses Across All Industries Globally
+            </span>
           </h1>
-
-          {/* Decorative Line */}
-          <div className="flex justify-center items-center mb-8">
-            <div
-              className={`w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-600 to-transparent transition-all duration-1000 ${
-                isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-              }`}
-            />
-            <div
-              className={`w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-4 transition-all duration-1000 delay-300 ${
-                isVisible
-                  ? "opacity-100 scale-100 rotate-180"
-                  : "opacity-0 scale-0"
-              }`}
-            />
-            <div
-              className={`w-20 h-0.5 bg-gradient-to-l from-transparent via-purple-600 to-transparent transition-all duration-1000 ${
-                isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-              }`}
-            />
-          </div>
 
           {/* Subtitle */}
           <p
-            className={`text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl leading-relaxed transition-all duration-700 delay-500 font-light ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
+            className={`text-base sm:text-lg md:text-xl text-gray-700 mb-12 max-w-3xl leading-relaxed transition-all duration-700 delay-400 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Bridging the gap between education and technology to create a
-            brighter future.
+            Partner with us to develop, deploy, and maintain end-to-end
+            <br />
+            custom software solutions tailored to your needs.
           </p>
 
-          {/* Feature Highlights */}
-          <div
-            className={`grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 w-full max-w-4xl transition-all duration-700 delay-600 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
-            }`}
-          >
-            {[
-              {
-                icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-                label: "IT Solutions",
-                color: "from-purple-600 to-pink-600",
-              }
-              ,{
-                icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
-                label: "STEM Education",
-                color: "from-blue-600 to-blue-800",
-              },
-              ,
-              {
-                icon: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-                label: "Professional Development",
-                color: "from-green-600 to-teal-600",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-white/50 hover:scale-105 hover:shadow-xl transition-all duration-300 group"
-              >
+          {/* Feature Badges with dotted connections */}
+          <div className="relative w-full max-w-5xl mb-12">
+            {/* Dotted connection lines */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              style={{ zIndex: 0 }}
+            >
+              {/* Top row connections */}
+              <line
+                x1="25%"
+                y1="15%"
+                x2="38%"
+                y2="15%"
+                stroke="#1e3a5f"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+                opacity="0.4"
+              />
+              <line
+                x1="48%"
+                y1="15%"
+                x2="62%"
+                y2="15%"
+                stroke="#1e3a5f"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+                opacity="0.4"
+              />
+              <line
+                x1="72%"
+                y1="15%"
+                x2="85%"
+                y2="15%"
+                stroke="#1e3a5f"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+                opacity="0.4"
+              />
+              {/* Diagonal connections to bottom row */}
+              <line
+                x1="30%"
+                y1="25%"
+                x2="38%"
+                y2="45%"
+                stroke="#1e3a5f"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+                opacity="0.4"
+              />
+              <line
+                x1="70%"
+                y1="25%"
+                x2="62%"
+                y2="45%"
+                stroke="#1e3a5f"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+                opacity="0.4"
+              />
+              {/* Bottom row connection */}
+              <line
+                x1="48%"
+                y1="55%"
+                x2="62%"
+                y2="55%"
+                stroke="#1e3a5f"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+                opacity="0.4"
+              />
+            </svg>
+
+            {/* Top Row - 4 badges */}
+            <div
+              className={`grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8 transition-all duration-700 delay-500 relative z-10 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              {features.slice(0, 4).map((feature, index) => (
                 <div
-                  className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:rotate-6 transition-transform duration-300`}
+                  key={index}
+                  className="bg-[#1e3a5f] text-white px-6 py-4 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3 justify-center"
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                  }}
                 >
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d={item.icon}
-                    ></path>
-                  </svg>
+                  <div className="flex-shrink-0">{feature.icon}</div>
+                  <span className="font-semibold text-sm lg:text-base text-center lg:text-left">
+                    {feature.label}
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-800">
-                  {item.label}
-                </h3>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Buttons */}
-          <div
-            className={`flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto transition-all duration-700 delay-700 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
-            }`}
-          >
-            <button className="group relative bg-gradient-to-r from-[#051d40] via-[#1976d2] to-[#051d40] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1976d2] to-[#051d40] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <a
-                href="/our-brands"
-                className="group relative z-10 flex items-center gap-2 justify-center transition-colors duration-300"
-              >
-                <span className="flex items-center gap-2">
-                  Explore Our Brands
-                  <svg
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </span>
-              </a>
-            </button>
-            <button className="group relative bg-white/80 backdrop-blur-sm border-2 border-[#051d40] text-[#051d40] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#051d40] hover:text-white shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
-              <div className="absolute inset-0 bg-[#051d40] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              <a
-                href="/contact-us"
-                className="group relative z-10 flex items-center gap-2 justify-center transition-colors duration-300"
-              >
-                <span className="flex items-center gap-2">
-                  Get in Touch
-                  <svg
-                    className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </span>
-              </a>
-            </button>
-          </div>
-
-          {/* Scroll indicator */}
-          <div
-            className={`mt-20 flex flex-col items-center gap-3 transition-all duration-700 delay-1000 ${
-              isVisible ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <span className="text-sm text-gray-500 font-medium tracking-wider uppercase">
-              Discover More
-            </span>
-            <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center pt-2 hover:border-blue-600 transition-colors duration-300 cursor-pointer">
-              <div className="w-1.5 h-3 bg-gradient-to-b from-blue-600 to-purple-600 rounded-full animate-bounce"></div>
+              ))}
             </div>
+
+            {/* Bottom Row - 2 badges centered */}
+            <div
+              className={`flex flex-col sm:flex-row justify-center gap-6 transition-all duration-700 delay-700 relative z-10 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              {features.slice(4).map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-[#1e3a5f] text-white px-6 py-4 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3 justify-center"
+                  style={{
+                    animationDelay: `${(index + 4) * 100}ms`,
+                  }}
+                >
+                  <div className="flex-shrink-0">{feature.icon}</div>
+                  <span className="font-semibold text-sm lg:text-base">
+                    {feature.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div
+            className={`transition-all duration-700 delay-900 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            <button className="group relative bg-[#FF6B35] hover:bg-[#ff5722] text-white px-10 py-4 rounded-lg font-bold text-lg shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
+              <span>Let's Talk</span>
+              <svg
+                className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        @keyframes blob {
-          0%,
-          100% {
-            transform: translate(0, 0) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-        }
-
         @keyframes float {
           0%,
           100% {
-            transform: translateY(0px);
+            transform: translateY(0px) rotate(0deg);
           }
           50% {
-            transform: translateY(-20px);
+            transform: translateY(-15px) rotate(5deg);
           }
-        }
-
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-
-        .animation-delay-4000 {
-          animation-delay: 4s;
         }
 
         .animate-float {
@@ -346,7 +361,8 @@ const Hero = () => {
 
         @media (max-width: 768px) {
           h1 {
-            font-size: 2.5rem;
+            font-size: 1.75rem;
+            line-height: 1.3;
           }
         }
       `}</style>
@@ -354,4 +370,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default ProductHero;
